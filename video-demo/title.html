@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:ZH;src:url("file:///usr/share/fonts/truetype/wqy/wqy-zenhei.ttc");}
+@font-face{font-family:EN;src:url("file:///usr/share/fonts/opentype/inter/Inter-Light.otf");}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#05060d;}
+.stage{position:absolute;inset:0;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 55%,#141a3a 0%,#070816 60%,#03040a 100%);}
+.blob{position:absolute;border-radius:50%;filter:blur(120px);opacity:.55;}
+.b1{width:900px;height:900px;left:-200px;top:-250px;background:#3b2dff;animation:drift1 10s linear both;}
+.b2{width:800px;height:800px;right:-220px;bottom:-300px;background:#ff2d8a;animation:drift2 10s linear both;}
+.b3{width:600px;height:600px;left:40%;top:60%;background:#00d4ff;opacity:.3;animation:drift3 10s linear both;}
+@keyframes drift1{from{transform:translate(0,0)}to{transform:translate(260px,140px)}}
+@keyframes drift2{from{transform:translate(0,0)}to{transform:translate(-240px,-120px)}}
+@keyframes drift3{from{transform:translate(0,0) scale(1)}to{transform:translate(-300px,-260px) scale(1.3)}}
+.grain{position:absolute;inset:0;opacity:.06;
+  background-image:repeating-linear-gradient(0deg,#fff 0 1px,transparent 1px 3px);}
+
+.content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  animation:zoom 10s linear both, out 1.4s 8.6s ease-in both;}
+@keyframes zoom{from{transform:scale(1)}to{transform:scale(1.06)}}
+@keyframes out{to{opacity:0;filter:blur(18px)}}
+
+.line{width:900px;height:2px;margin:36px 0;
+  background:linear-gradient(90deg,transparent,#9fb4ff,#fff,#ff9fd0,transparent);
+  transform:scaleX(0);animation:line 1.2s .2s cubic-bezier(.7,0,.2,1) both;}
+@keyframes line{to{transform:scaleX(1)}}
+
+.title{position:relative;font-family:ZH;font-size:210px;letter-spacing:40px;margin-right:-40px;color:#fff;
+  line-height:1;text-shadow:0 0 60px rgba(140,160,255,.45);}
+.title span{display:inline-block;opacity:0;animation:rise 1.1s cubic-bezier(.2,.8,.2,1) both;}
+.title span:nth-child(1){animation-delay:.9s}
+.title span:nth-child(2){animation-delay:1.1s}
+.title span:nth-child(3){animation-delay:1.3s}
+.title span:nth-child(4){animation-delay:1.5s}
+@keyframes rise{from{opacity:0;transform:translateY(90px) scale(.9);filter:blur(24px)}
+  to{opacity:1;transform:none;filter:blur(0)}}
+.shine{position:absolute;inset:0;color:transparent;text-shadow:none;
+  background:linear-gradient(110deg,transparent 40%,rgba(255,255,255,.95) 50%,transparent 60%);
+  background-size:300% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;
+  animation:shine 1.6s 4.2s ease-in-out both;}
+@keyframes shine{from{background-position:100% 0}to{background-position:0% 0}}
+
+.sub{font-family:EN;font-size:44px;color:#c9d2ff;letter-spacing:40px;margin-right:-40px;
+  opacity:0;animation:sub 2s 2.4s cubic-bezier(.2,.8,.2,1) both;}
+@keyframes sub{from{opacity:0;letter-spacing:80px;margin-right:-80px}to{opacity:.9;letter-spacing:22px;margin-right:-22px}}
+.line2{animation-delay:2.8s}
+</style></head>
+<body><div class="stage">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grain"></div>
+  <div class="content">
+    <div class="line"></div>
+    <div class="title"><span>创</span><span>意</span><span>无</span><span>限</span><div class="shine">创意无限</div></div>
+    <div class="line line2"></div>
+    <div class="sub">IMAGINATION IN MOTION</div>
+  </div>
+</div></body></html>
